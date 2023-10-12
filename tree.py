@@ -34,8 +34,8 @@ class Tree:
 
 	def __init__(self, size=7, startx=4, starty=1):
 		self.map = [[Node(xpos=j, ypos=i) for i in range(size)] for j in range(size)]
-		self.endpoints = [{"x": (size/2), "y": (size/2), "dead": False}]
-		self.map[(size/2)][(size/2)].top = True
+		self.endpoints = [{"x": (size//2), "y": (size//2), "dead": False}]
+		self.map[(size//2)][(size//2)].top = True
 		self.size = size
 
 	def movepoint(self, point, direction):
@@ -116,22 +116,22 @@ class Tree:
 				self.movepoint(endpoint, "left")
 
 	def fixCenter(self):
-		if (self.map[(self.size/2)][(self.size/2) - 1].bottom == True):
-			self.map[self.size/2][self.size/2].top = True
+		if (self.map[(self.size//2)][(self.size//2) - 1].bottom == True):
+			self.map[self.size//2][self.size//2].top = True
 		else:
-			self.map[self.size/2][self.size/2].top = False
-		if (self.map[(self.size/2) + 1][(self.size/2)].left == True):
-			self.map[self.size/2][self.size/2].right = True
+			self.map[self.size//2][self.size//2].top = False
+		if (self.map[(self.size//2) + 1][(self.size//2)].left == True):
+			self.map[self.size//2][self.size//2].right = True
 		else:
-			self.map[self.size/2][self.size/2].right = False
-		if (self.map[(self.size/2)][(self.size/2) + 1].top == True):
-			self.map[self.size/2][self.size/2].bottom = True
+			self.map[self.size//2][self.size//2].right = False
+		if (self.map[(self.size//2)][(self.size//2) + 1].top == True):
+			self.map[self.size//2][self.size//2].bottom = True
 		else:
-			self.map[self.size/2][self.size/2].bottom = False
-		if (self.map[(self.size/2) - 1][(self.size/2)].right == True):
-			self.map[self.size/2][self.size/2].left = True
+			self.map[self.size//2][self.size//2].bottom = False
+		if (self.map[(self.size//2) - 1][(self.size//2)].right == True):
+			self.map[self.size//2][self.size//2].left = True
 		else:
-			self.map[self.size/2][self.size/2].left = False
+			self.map[self.size//2][self.size//2].left = False
 
 	def printNode(self, xvalue=0, yvalue=0):
 		return self.map[xvalue][yvalue].left
@@ -228,7 +228,7 @@ class Tree:
 
 			printstring += "	</tr>\n"
 		printstring += "</table>\n\n"
-		printstring += "<div id='boardcenter' class='boardinfo'>" + str(self.size/2) + "</div>"
+		printstring += "<div id='boardcenter' class='boardinfo'>" + str(self.size//2) + "</div>"
 		printstring += "<div id='usedpieces' class='boardinfo'></div>"
 
 		print(printstring)
