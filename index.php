@@ -284,10 +284,10 @@
 
 if( isset($_POST['size']) )
 {
-	$command = escapeshellcmd('python tree.py ' . $_POST['size']);
+	$command = escapeshellcmd('python3 tree.py ' . $_POST['size']);
 	$mysize = $_POST['size'];
 } else {
-	$command = escapeshellcmd('python tree.py 9');
+	$command = escapeshellcmd('python3 tree.py 9');
 	$mysize = "9";
 }
 $output = shell_exec($command);
