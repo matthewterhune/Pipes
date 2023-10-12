@@ -93,7 +93,6 @@ class Tree:
 
 	def cycle(self):
 		for endpoint in self.endpoints[:]:
-			#print endpoint
 			x = endpoint["x"]
 			y = endpoint["y"]
 			if (endpoint["dead"]):
@@ -169,15 +168,12 @@ class Tree:
 
 
 	def printBoard(self):
-		print ""
+		print("")
 		for j in range(0, self.size):
 			printstring = u""
 			for i in range(0, self.size):
 				printstring = printstring + self.uniBox(self.map[i][j].top, self.map[i][j].right, self.map[i][j].bottom, self.map[i][j].left)
-				#printstring += str(self.map[i][j].count())
-				#printstring += str(self.map[i][j].ypos)
-			print printstring
-		#print sorted(self.endpoints, key=itemgetter('y'))
+			print(printstring)
 
 	def printHTML(self):
 		self.fixCenter()
@@ -235,8 +231,7 @@ class Tree:
 		printstring += "<div id='boardcenter' class='boardinfo'>" + str(self.size/2) + "</div>"
 		printstring += "<div id='usedpieces' class='boardinfo'></div>"
 
-		print printstring
-		#print sorted(self.endpoints, key=itemgetter('y'))
+		print(printstring)
 
 
 
